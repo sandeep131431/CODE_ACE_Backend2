@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 const axiosClient =  axios.create({
-    baseURL: 'http://localhost:3000',
+    baseURL: 'https://code-ace-backend1.onrender.com',
     withCredentials: true,
     headers: {
         'Content-Type': 'application/json'
