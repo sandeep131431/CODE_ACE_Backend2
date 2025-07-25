@@ -19,6 +19,9 @@ app.use(cors({
 app.use(express.json());
 app.use(cookieParser());
 
+app.get('/',(req,res)=>{
+    res.send("working")
+});
 app.use('/problem',problemRouter);
 app.use('/contest',contestRouter);
 
