@@ -1,11 +1,11 @@
 const express = require('express')
 const app = express();
 require('dotenv').config();
-const main =  require('./config/db')
+const main =  require('./src/config/db')
 const cookieParser =  require('cookie-parser');
-const redisClient = require('./config/redis');
-const problemRouter = require('./routes/ContestProblem')
-const contestRouter = require('./routes/Contest');
+const redisClient = require('./src/config/redis');
+const problemRouter = require('./src/routes/ContestProblem')
+const contestRouter = require('./src/routes/Contest');
 // const submitRouter = require("./routes/submit")
 const cors = require('cors')
 
@@ -19,13 +19,9 @@ app.use(cors({
 app.use(express.json());
 app.use(cookieParser());
 
-app.get('/',(req,res)=>{
-    res.send("working")
-});
 app.use('/problem',problemRouter);
 app.use('/contest',contestRouter);
 
-// app.use('/submission',submitRouter);
 
 
 
